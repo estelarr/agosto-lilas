@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agosto Lilás - Links Informativos</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos do body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fafb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Dark mode para body */
+        body.dark {
+            background-color: #111827;
+        }
+
+        /* Container principal */
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 42rem;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Dark mode para container */
+        body.dark .container {
+            background-color: #1f2937;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #8B5A9B;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #4b5563;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .header p {
+            color: #d1d5db;
+        }
+
+        /* Seção sobre a campanha */
+        .about-section {
+            background-color: #faf5ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark .about-section {
+            background-color: rgba(76, 29, 149, 0.2);
+        }
+
+        .about-section h2 {
+            font-weight: 600;
+            color: #6b21a8;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .about-section h2 {
+            color: #c4b5fd;
+        }
+
+        .about-section p {
+            font-size: 0.875rem;
+            color: #374151;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .about-section p {
+            color: #d1d5db;
+        }
+
+        /* Seção de links */
+        .links-section {
+            margin-bottom: 2rem;
+        }
+
+        .links-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .links-section h3 {
+            color: white;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Estilos dos links */
+        .link-item {
+            display: block;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .link-item p {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-item span {
+            font-size: 0.75rem;
+        }
+
+        /* Link 1 - Ministério das Mulheres */
+        .link-purple {
+            background-color: #f3e8ff;
+            border-left-color: #8b5cf6;
+        }
+
+        body.dark .link-purple {
+            background-color: rgba(76, 29, 149, 0.3);
+        }
+
+        .link-purple:hover {
+            background-color: #ede9fe;
+        }
+
+        body.dark .link-purple:hover {
+            background-color: rgba(76, 29, 149, 0.5);
+        }
+
+        .link-purple h4 {
+            color: #6b21a8;
+        }
+
+        body.dark .link-purple h4 {
+            color: #c4b5fd;
+        }
+
+        .link-purple p {
+            color: #4b5563;
+        }
+
+        body.dark .link-purple p {
+            color: #9ca3af;
+        }
+
+        .link-purple span {
+            color: #8b5cf6;
+        }
+
+        body.dark .link-purple span {
+            color: #a78bfa;
+        }
+
+        /* Link 2 - FNAS */
+        .link-pink {
+            background-color: #fdf2f8;
+            border-left-color: #ec4899;
+        }
+
+        body.dark .link-pink {
+            background-color: rgba(131, 24, 67, 0.3);
+        }
+
+        .link-pink:hover {
+            background-color: #fce7f3;
+        }
+
+        body.dark .link-pink:hover {
+            background-color: rgba(131, 24, 67, 0.5);
+        }
+
+        .link-pink h4 {
+            color: #be185d;
+        }
+
+        body.dark .link-pink h4 {
+            color: #f9a8d4;
+        }
+
+        .link-pink p {
+            color: #4b5563;
+        }
+
+        body.dark .link-pink p {
+            color: #9ca3af;
+        }
+
+        .link-pink span {
+            color: #ec4899;
+        }
+
+        body.dark .link-pink span {
+            color: #f472b6;
+        }
+
+        /* Link 3 - TJSC */
+        .link-indigo {
+            background-color: #eef2ff;
+            border-left-color: #6366f1;
+        }
+
+        body.dark .link-indigo {
+            background-color: rgba(49, 46, 129, 0.3);
+        }
+
+        .link-indigo:hover {
+            background-color: #e0e7ff;
+        }
+
+        body.dark .link-indigo:hover {
+            background-color: rgba(49, 46, 129, 0.5);
+        }
+
+        .link-indigo h4 {
+            color: #3730a3;
+        }
+
+        body.dark .link-indigo h4 {
+            color: #a5b4fc;
+        }
+
+        .link-indigo p {
+            color: #4b5563;
+        }
+
+        body.dark .link-indigo p {
+            color: #9ca3af;
+        }
+
+        .link-indigo span {
+            color: #6366f1;
+        }
+
+        body.dark .link-indigo span {
+            color: #818cf8;
+        }
+
+        /* Seção de contatos de emergência */
+        .emergency-section {
+            background-color: #fef2f2;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark .emergency-section {
+            background-color: rgba(153, 27, 27, 0.2);
+        }
+
+        .emergency-section h3 {
+            font-weight: 600;
+            color: #991b1b;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .emergency-section h3 {
+            color: #fca5a5;
+        }
+
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .emergency-item strong {
+            color: #b91c1c;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .emergency-item strong {
+            color: #fca5a5;
+        }
+
+        .emergency-item p {
+            color: #4b5563;
+            transition: color 0.3s ease;
+        }
+
+        body.dark .emergency-item p {
+            color: #9ca3af;
+        }
+
+        /* Responsividade */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .emergency-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Agosto Lilás</h1>
+            <p>Mês de conscientização contra a violência à mulher</p>
+        </div>
+
+        <!-- Informação sobre a campanha -->
+        <div class="about-section">
+            <h2>Sobre a Campanha</h2>
+            <p>
+                O Agosto Lilás é uma campanha nacional de conscientização e enfrentamento à violência contra as mulheres, 
+                instituída em referência à Lei Maria da Penha (7 de agosto de 2006).
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="links-section">
+            <h3>Links Informativos Oficiais</h3>
+            
+            <div class="links-container">
+                <!-- Link 1 - Ministério das Mulheres -->
+                <a href="https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2025/agosto/agosto-lilas-mes-sera-marcado-por-acoes-de-mobilizacao-prevencao-e-fortalecimento-da-rede-de-protecao-as-mulheres" 
+                   target="_blank" rel="noopener noreferrer" class="link-item link-purple">
+                    <h4>Ministério das Mulheres</h4>
+                    <p>Ações de mobilização, prevenção e fortalecimento da rede de proteção às mulheres</p>
+                    <span>🔗 gov.br/mulheres</span>
+                </a>
+
+                <!-- Link 2 - FNAS -->
+                <a href="https://fnas.mds.gov.br/agosto-lilas-mes-de-conscientizacao-e-combate-a-violencia-contra-a-mulher/" 
+                   target="_blank" rel="noopener noreferrer" class="link-item link-pink">
+                    <h4>FNAS - Fundo Nacional de Assistência Social</h4>
+                    <p>Mês de conscientização e combate à violência contra a mulher</p>
+                    <span>🔗 fnas.mds.gov.br</span>
+                </a>
+
+                <!-- Link 3 - Governo do Paraná -->
+                <a href="https://www.casacivil.pr.gov.br/Noticia/Agosto-Lilas-Estado-orienta-servidores-sobre-combate-violencia-contra-mulher" 
+                   target="_blank" rel="noopener noreferrer" class="link-item link-indigo">
+                    <h4>Governo do Paraná - Casa Civil</h4>
+                    <p>Estado orienta servidores sobre combate à violência contra a mulher</p>
+                    <span>🔗 casacivil.pr.gov.br</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contatos de emergência -->
+        <div class="emergency-section">
+            <h3>Canais de Ajuda</h3>
+            <div class="emergency-grid">
+                <div class="emergency-item">
+                    <strong>Ligue 180</strong>
+                    <p>Central de Atendimento à Mulher</p>
+                </div>
+                <div class="emergency-item">
+                    <strong>Ligue 190</strong>
+                    <p>Polícia Militar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+            }
+        });
+    </script>
+</body>
+</html>
